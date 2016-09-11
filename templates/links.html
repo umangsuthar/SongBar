@@ -9,9 +9,25 @@
 	.font1{
 		color: #000;
 	}
-	.headerbg{
-		background-color: #B6B6B4;
+	.tag-line {
+    	background-color: rgb(24, 77, 71);
+    	color: rgb(255, 255, 255);
+    	padding: 35px 50px;
+    	font-size: 25px;
+    	text-align: center;
 	}
+	.features-sec {
+    background-color: rgb(220, 220, 220);
+    padding-bottom: 50px;
+    padding-top: 50px;
+	}
+
+	.description-sec {
+    background-color: rgb(241, 229, 255);
+    color: rgb(107, 105, 105);
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
 	</style>
 
 </head>
@@ -26,18 +42,22 @@
 		</div>
 
 	</nav>	
-<div class="container">
-    
-    <div class="row headerbg">
-    	<div class="col">
-    	<font size="6px">{{ mname }}</font>
-    	</div>
-    </div>
-	
-   			
+
+<div class="tag-line">
+   <div class="container">
+  	  	<div class="row">
+    		<div class="col-md-12"> 
+    			{{ mname }}
+    		</div> 
+      	</div>
+   	</div>
+</div>
+
+<div class="features-sec">
+<div class="container">	
 	<div class="row">	
     	
-    		<div class="row"><div class="col-md-12 alert alert-info row"><font size="5px">Download Single Song</font></div></div>
+    		<div class="row"><div class="col-sm-12 alert alert-info"><font size="5px">Download Single Song</font></div></div>
 
 
     		{% for row in slink %}
@@ -59,8 +79,10 @@
     		{% endfor %}
    
     </div> 
-   
-
+</div>	   
+</div>
+<div class="description-sec">
+	<div class="container">
 	<div class="row">
     	
     	 {% for row in mlink %} 
@@ -75,7 +97,7 @@
     	 {% endfor %} 
     	
     </div>
-   
+   </div>
 </div>
 </body>
 </htML>
