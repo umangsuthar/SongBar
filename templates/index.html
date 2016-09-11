@@ -1,0 +1,33 @@
+<html>
+<head>
+	<link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static',filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+</head>
+<body>
+	<!-- Header Data -->
+	<nav class="navbar navbar-inverse navbar-default navbar-static-top">
+		
+		<div class="nav navbar-nav">
+			<span class="navbar-brand" style="color:red;font-family: Raleway;font-weight: bold;font-size: 25"> SongsBar </span>	
+		</div>
+
+	</nav>	
+
+	 <!-- Container Class -->
+	 <div class="container">
+        <div class="row">
+    	{% for row in data1 %}
+    		<div class="col-sm-6">
+			<div class="alert alert-info">
+    		<a href="{{url_for('showsong', mname=row['MovieName'] )}}">{{row['MovieName']}}</a>
+    		</div>
+    		</div>
+    	{% endfor %}
+
+    </div>
+
+
+    </div>	
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<head>
+	<link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static',filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+
+	<style type="text/css">
+
+	.font1{
+		color: #000;
+	}
+	.headerbg{
+		background-color: #B6B6B4;
+	}
+	</style>
+
+</head>
+
+<body>
+	
+	<nav class="navbar navbar-inverse navbar-default navbar-static-top">
+		
+		<div class="nav navbar-nav">
+			<span class="navbar-brand" style="color:red;font-family: Raleway;font-weight: bold;"> SongsBar </span>	
+			
+		</div>
+
+	</nav>	
+<div class="container">
+    
+    <div class="row headerbg">
+    	<div class="col">
+    	<font size="6px">{{ mname }}</font>
+    	</div>
+    </div>
+	
+   			
+	<div class="row">	
+    	
+    		<div class="row"><div class="col-md-12 alert alert-info row"><font size="5px">Download Single Song</font></div></div>
+
+
+    		{% for row in slink %}
+    		
+    			<div class="alert alert-info row">
+    			<div class="col-md-12">
+    			<div class="col-sm-6 "><b class="font1">{{ row['SongName'] }}</b></div>
+
+    			<div class="col-sm-3"><a class="btn btn-success" href="{{ row['MP128'] }}">Download 128 kbps</a></div>
+
+    			<div class="col-sm-3"><a class="btn btn-success" href ="{{ row['MP320'] }}">Download 320 kbps</a>
+
+    			</div>
+
+
+    		</div>
+    		</div>
+    			
+    		{% endfor %}
+   
+    </div> 
+   
+
+	<div class="row">
+    	
+    	 {% for row in mlink %} 
+    		<div class="alert alert-info row">
+    			<div class="col-md-12">
+    		<div class="col-sm-12"><font size="5px">Download All In One Click</font></div>
+    		<div class="col-sm-6"><b class="font1">{{ row['MovieName'] }}</b></div>
+    		<div class="col-sm-3"><a class="btn btn-success" href="{{ row['Zip128'] }}">Download 128kbps Zip</a>  </div>
+    		<div class="col-sm-3"><a class="btn btn-success" href="{{ row['Zip320'] }}">Download 320kbps Zip</a> </div>
+    	 	</div>
+    	 	</div>
+    	 {% endfor %} 
+    	
+    </div>
+   
+</div>
+</body>
+</htML>
