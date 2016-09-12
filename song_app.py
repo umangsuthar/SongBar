@@ -11,13 +11,13 @@ def main():
 	conn.row_factory = sql.Row
 	cur = conn.cursor()
 	#execute query
-	cur.execute("select * from msong ORDER BY TimeStamp DESC")
-	data = cur.fetchall();
+	# cur.execute("select * from msong ORDER BY TimeStamp DESC")
+	# data = cur.fetchall();
 
-	cur.execute("select Distinct MovieName from ssong ORDER BY TimeStamp DESC")
+	cur.execute("select Distinct MovieName from ssong ORDER BY TimeStamp DESC LIMIT 20")
 	data1 = cur.fetchall();
 
-	return render_template('index.html',data = data,data1  = data1)
+	return render_template('index.html',data1  = data1)
 
 @app.route('/showsong/<string:mname>')
 def showsong(mname):
